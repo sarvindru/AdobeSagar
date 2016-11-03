@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-xs-12 header">
+    <h2>Adobe Marketing Cloud / {{routeName}} /</h2>
+    </div>
+  <div class="left-panel animated" ng-class="{'slideInLeft':!$ctrl.slidePanel, 'slideOutLeft':$ctrl.slidePanel }">
+        <h3>Menu</h3>
+      <ul>
+          <li>
+              <a ui-sref="app.home">Home</a></li><li>
+              <a ui-sref="app.weather">Weather</a>
+          </li>
+      </ul>
+  </div>
+    <div class="right-panel animated" ng-class="{'slideInRight':!$ctrl.slidePanel, 'slideOutRight':$ctrl.slidePanel }">
+        <h3 ><span ng-click="$ctrl.togglePanel()" class="glyphicon glyphicon-align-justify"></span>&nbsp;{{routeName}}</h3>
+    <div class="col-xs-12" ui-view=""></div>
+    </div>
+</div>
