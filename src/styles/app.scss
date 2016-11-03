@@ -13,10 +13,10 @@ body{
   height: 134px;
 }
 .left-panel{
-  position: fixed;
+  position: absolute;
   width:250px;
-  height:100%;
-  background:#4d4d4d ;
+  height:100vh;
+  background:#4d4d4d;
   left:0px;
   top:75px;
   color: #fff;
