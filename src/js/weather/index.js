@@ -1,14 +1,24 @@
 import angular from 'angular';
 
-// module
+
+/**
+ * Weather Module creation
+ * @type {angular.Module}
+ */
 let weatherModule = angular.module('app.weather', []);
 
-// config
+/**
+ * Waether module config
+ */
 import weatherConfig from './weather.config';
 weatherModule.config(weatherConfig);
 
 
-// Controllers
+
+/**
+ *  Creating Controllers
+ *  @type controller
+ */
 import WeatherController from './weather.controller';
 weatherModule.controller('WeatherController', WeatherController);
 

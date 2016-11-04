@@ -11,19 +11,22 @@
             <label class="pull-left offset-10" for="state">Sate</label>
             <div class="col-xs-5">
                 <input type="text" class="form-control" ng-model="$ctrl.userDetails.state" id="state" placeholder="State">
-                <button class="btn btn-default pull-right offset-10" ng-click="$ctrl.getWeatherDetails()">Go</button>
+                <button ng-disabled="$ctrl.disableGoButton" class="btn btn-default pull-right offset-10" ng-click="$ctrl.getWeatherDetails()">Go</button>
             </div>
         </div>
 
     </form>
+    <div class="col-xs-12">
+        <img ng-show="$ctrl.loadSpinner" src="https://www.timewarnercable.com/content/dam/residential/images/checkout/global/spinner.gif" class="col-xs-offset-3 spinner" />
 
+    </div>
     <div class="col-xs-12" ng-if="$ctrl.weatherReport">
         <h2>Results</h2>
         <p><label>Current Weather</label>: {{$ctrl.weatherReport.weather[0].description}} </p>
         <p><label>Last Reading</label>: {{$ctrl.weatherReport.dt | date:'short' }}</p>
-        <p><label>Temperature</label>: {{$ctrl.weatherReport.main.temp}}</p>
+        <p><label>Temperature</label>: {{$ctrl.weatherReport.main.temp}} F</p>
         <p><label>Humidity</label>: {{$ctrl.weatherReport.main.humidity}}</p>
-        <p><label>SunRise</label>: {{$ctrl.weatherReport.sys.sunrise | date:'short' }}</p>
-        <p><label>Sunset</label>: {{$ctrl.weatherReport.sys.sunset | date:'short' }}</p>
+        <p><label>SunRise</label>: {{$ctrl.weatherReport.sys.sunrise*1000 | date:'short' }}</p>
+        <p><label>Sunset</label>: {{$ctrl.weatherReport.sys.sunset*1000 | date:'short' }}</p>
     </div>
 </div>

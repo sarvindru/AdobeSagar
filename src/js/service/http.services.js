@@ -1,9 +1,7 @@
 
  class HttpServices {
-
     constructor($http){
         'ngInject';
-
         this.http = $http;
     }
 

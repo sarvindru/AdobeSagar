@@ -1,14 +1,23 @@
 import angular from 'angular';
 
-// module
+
+/**
+ * homeModule Creation
+ * @type {angular.Module}
+ */
 let homeModule = angular.module('app.home', []);
 
-// config
+
+/**
+ * home module config
+ */
 import HomeConfig from './home.config';
 homeModule.config(HomeConfig);
 
 
-// Controllers
+/**
+ * homecontroller
+ */
 import HomeController from './home.controller';
 homeModule.controller('HomeController', HomeController);
 
